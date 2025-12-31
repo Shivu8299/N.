@@ -125,12 +125,21 @@ function startLoading() {
 
 // --- TYPEWRITER ---
 function startTypewriter() {
-    const text = "Happy New Year sangita! May 2026 be kind, exciting, and full of opportunities 🌟 and one more thing i love you soo soo much 🫂🌷💌";
+    // UPDATED TEXT HERE:
+    const text = "Happy new year sangita may 2026 will be your best year of your life with me and one last thing I love you so so so much sangita you are the always best 🌷💌🫀";
     const el = document.getElementById('type-text');
+    el.innerHTML = ""; // Clear existing text
     let i = 0;
     function type() {
-        if(i < text.length) { el.innerHTML += text.charAt(i); i++; setTimeout(type, 60); }
-        else { document.getElementById('restart').style.opacity = "1"; document.getElementById('restart').style.pointerEvents = "all"; }
+        if(i < text.length) { 
+            el.innerHTML += text.charAt(i); 
+            i++; 
+            setTimeout(type, 60); 
+        }
+        else { 
+            document.getElementById('restart').style.opacity = "1"; 
+            document.getElementById('restart').style.pointerEvents = "all"; 
+        }
     }
     type();
-       }
+}
