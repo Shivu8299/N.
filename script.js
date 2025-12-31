@@ -133,4 +133,4 @@ function startTypewriter() {
         else { document.getElementById('restart').style.opacity = "1"; document.getElementById('restart').style.pointerEvents = "all"; }
     }
     type();
-}
+       }
