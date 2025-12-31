@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark: #0a0a0a;
+            --white: #ffffff;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* All Sections Styling */
+        .section {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .active { display: flex; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3rem; color: var(--gold); }
+        p { line-height: 1.6; font-weight: 300; }
+
+        /* Buttons */
+        .btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn:hover { background: var(--gold); color: var(--dark); }
+
+        /* Envelope Styling */
+        .envelope {
+            width: 150px;
+            height: 100px;
+            background: #c0392b;
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .envelope::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            border-top: 50px solid #e74c3c;
+        }
+
+        /* Image Placeholder */
+        .pic-frame {
+            width: 250px;
+            height: 250px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #222; /* Add your image path in src later */
+            object-fit: cover;
+        }
+
+        /* List Styling */
+        ul { list-style: none; padding: 0; }
+        li { margin: 10px 0; font-size: 1.1rem; border-bottom: 1px solid #333; padding-bottom: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="firecracker-page" class="section active">
+        <h1 id="fire-text">🎆 2026 is loading...</h1>
+        <p>Wait for the magic!</p>
+    </div>
+
+    <div id="envelope-page" class="section">
+        <h1>You have a message!</h1>
+        <div class="envelope" onclick="nextPage('envelope-page', 'list-page')"></div>
+        <p>Tap the envelope to open</p>
+    </div>
+
+    <div id="list-page" class="section">
+        <h1>2026 Goals</h1>
+        <ul>
+            <li>✨ Keep Growing</li>
+            <li>🚀 Work on Jarvis Project</li>
+            <li>📚 Learn New Skills</li>
+        </ul>
+        <button class="btn" onclick="nextPage('list-page', 'song-page')">Continue</button>
+    </div>
+
+    <div id="song-page" class="section">
+        <h1>Your 2026 Anthem</h1>
+        <div style="margin: 20px 0;">
+            <p>🎵 Playing your favorite track...</p>
+        </div>
+        <button class="btn" onclick="nextPage('song-page', 'pic-page')">Next</button>
+    </div>
+
+    <div id="pic-page" class="section">
+        <h1>A Beautiful Memory</h1>
+        <img src="https://via.placeholder.com/250" alt="Your Pic" class="pic-frame">
+        <button class="btn" onclick="nextPage('pic-page', 'ready-2026-page')">Ready for 2026?</button>
+    </div>
+
+    <div id="ready-2026-page" class="section">
+        <h1>Are you ready for 2026?</h1>
+        <p>New year, new opportunities, and new dreams.</p>
+        <button class="btn" onclick="nextPage('ready-2026-page', 'closing-2025-page')">Let's Go</button>
+    </div>
+
+    <div id="closing-2025-page" class="section">
+        <h1>Closing the 2025 Chapter</h1>
+        <p>Thank you for all the lessons, 2025. It's time to say goodbye.</p>
+        <button class="btn" onclick="nextPage('closing-2025-page', 'note-page')">One Last Note</button>
+    </div>
+
+    <div id="note-page" class="section">
+        <h1>A Special Note</h1>
+        <p>"The best is yet to come. Keep building, keep believing."</p>
+        <button class="btn" onclick="nextPage('note-page', 'shield-page')">Finish</button>
+    </div>
+
+    <div id="shield-page" class="section">
+        <h1>🛡️ Your 2026 Shield</h1>
+        <p>Protection, Strength, and Success for the year ahead.</p>
+        <h1 style="font-size: 1.5rem;">Happy New Year!</h1>
+        <button class="btn" onclick="location.reload()">Restart</button>
+    </div>
+
+    <script>
+        // Fix for the GIF/Jeep issue:
+        // Automatically move from firecracker to envelope after 4 seconds
+        setTimeout(() => {
+            nextPage('firecracker-page', 'envelope-page');
+        }, 4000);
+
+        function nextPage(currentId, nextId) {
+            // Hide current
+            document.getElementById(currentId).classList.remove('active');
+            // Show next
+            document.getElementById(nextId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
