@@ -125,7 +125,7 @@ function startLoading() {
 
 // --- TYPEWRITER ---
 function startTypewriter() {
-    const text = "Happy New Year Anushka! May 2026 be kind, exciting, and full of opportunities 🌟";
+    const text = "Happy New Year sangita! May 2026 be kind, exciting, and full of opportunities 🌟 and one more thing i love you soo soo much 🫂🌷💌";
     const el = document.getElementById('type-text');
     let i = 0;
     function type() {
