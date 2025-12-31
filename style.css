@@ -99,4 +99,3 @@ body { font-family: 'Quicksand', sans-serif; overflow: hidden; height: 100vh; wi
 .typewriter-box { background: white; padding: 40px 20px; border-radius: 15px; width: 85%; margin: 30px 0; min-height: 120px; display: flex; align-items: center; }
 .handwriting-big { font-family: 'Dancing Script'; font-size: 1.8rem; color: #f4c430; line-height: 1.5; text-align: center; }
 .restart-btn { opacity: 0; pointer-events: none; transition: 1s; border: 2px solid #f4c430; color: #f4c430; background: transparent; padding: 12px 35px; border-radius: 50px; font-weight: bold; }
-              
